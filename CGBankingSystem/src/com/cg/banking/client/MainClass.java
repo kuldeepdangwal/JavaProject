@@ -19,7 +19,7 @@ public class MainClass {
 		boolean flag=true;
 		while(flag) {
 			System.out.println("Enter your choice:\n1. Open Account\n2. Get Account Details\n3. Get All Account Details"
-					+ "\n4."+"\n5. Exit");
+					+ "\n4. Deposit"+"\n5. Withdraw"+"\n6. Exit");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
@@ -46,9 +46,16 @@ public class MainClass {
 				System.out.println(allAccountDetails);
 				break;
 			case 4:
-				
+				bankingService = new BankingServicesImpl();
+				System.out.println("Enter Account number: ");
+				accountNo = sc.nextInt();
+				System.out.println("Enter amount: ");
+				int amount = sc.nextInt();
+				bankingService.depositAmount(accountNo, amount);
 				break;
 			case 5:
+				break;
+			case 6:
 				flag =false;
 				break;
 		default:
